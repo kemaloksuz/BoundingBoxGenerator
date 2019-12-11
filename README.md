@@ -17,8 +17,7 @@ IDEA: Given a bounding box <img src="https://latex.codecogs.com/gif.latex?B" /> 
 
 CODE: In the following line you can see an implementation of the extended version of the bounding box generator which outputs one box for each IoU in the given list of IoUs.
 
-https://github.com/kemaloksuz/mmdetection/blob/8556e3c9c3f1656d08668a43f4142033cc6612f1/mmdet/core/bbox/samplers/bounding_box_generator.py#L180
-
+https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/bounding_box_generator.py#L180
 
 ## Positive RoI Generator
 
@@ -28,7 +27,7 @@ IDEA: We devised positive RoI (pROI) Generator as a specific application of the 
 
 CODE: Following link is the address of the code of our pRoI generator. 
 
-https://github.com/kemaloksuz/mmdetection/blob/BB-Generation-and-OFB-Sampling/mmdet/core/bbox/samplers/pRoI_generator.py 
+https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/pRoI_generator.py 
 
 One can employ it easily by sticking to the sampler conventions in the mmdetection framework. You can find configuration file examples in the configs/BBGeneration folder. 
 
@@ -40,9 +39,9 @@ IDEA: Different from the generators, Online Foreground Sampling is a sampler suc
 
 CODE: Following links are the addresses of the code of our plain OFB sampler and OFB sampler combined with Online Hard Negative Mining respectively. 
 
-https://github.com/kemaloksuz/mmdetection/blob/BB-Generation-and-OFB-Sampling/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py
+https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py
 
-https://github.com/kemaloksuz/mmdetection/blob/BB-Generation-and-OFB-Sampling/mmdet/core/bbox/samplers/OFB_with_OHNM.py
+https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/OFB_with_OHNM.py
 
 You can find configuration file examples in the configs/OFB folder. 
 
