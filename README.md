@@ -1,7 +1,7 @@
 
 # Generating Positive Bounding Boxes for Balanced Training of Object Detectors
 
-This repository contains Pytorch implementations of the Bounding Box Generator, positive RoI Generator and Online Foreground Balanced sampling. The repository is based on the mmdetection object detection framework. You may refer to [mmdetection](https://github.com/open-mmlab/mmdetection) for a thorough understanding of the framework.
+This repository contains Pytorch implementations of the Bounding Box Generator, positive RoI Generator and Online Foreground Balanced sampling. The repository is based on the mmdetection object detection framework. You may refer to [mmdetection](https://github.com/open-mmlab/mmdetection) for a thorough understanding of the framework. If you are unfamiliar with the setup of the mmdetection the please refer to this [link](https://github.com/open-mmlab/mmdetection/blob/master/docs/INSTALL.md).
 
 Please cite the following paper if you use this repository. 
 
