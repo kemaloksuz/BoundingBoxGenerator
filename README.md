@@ -1,7 +1,7 @@
 
 # Generating Positive Bounding Boxes for Balanced Training of Object Detectors
 
-This repository contains Pytorch implementations of the Bounding Box Generator, positive RoI Generator and Online Foreground Balanced sampling (arxiv link). The repository is based on object detection framework. You may refer to mmdetection for a thorough understanding of the framework in the followinf link:
+This repository contains Pytorch implementations of the Bounding Box Generator, positive RoI Generator and Online Foreground Balanced sampling. The repository is based on object detection framework. You may refer to mmdetection for a thorough understanding of the framework.
 
 Please cite the following paper if you use this repository. 
 
@@ -36,7 +36,7 @@ Experimentally we have showed that our pRoI sampler is able to provide more samp
 
 IDEA: Different from the generators, Online Foreground Sampling is a sampler such as Random Sampler, OHEM Sampler etc. One difference from them is that we only consider positive examples in the batch, so it can also be combined to negative samplers. Main motivation is to generate a batch as balanced as possible from the classes within the batch. That's why we assign probabilities to each positive candidate RoI by considering the total number of each class. Basically, we utilize multinomial sampling.
 
-CODE:One can check the our plain [OFB sampler](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py) and [OFB sampler](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/OFB_with_OHNM.py) combined with Online Hard Negative Mining respectively. 
+CODE:One can check the our plain [OFB sampler](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py) and [OFB sampler combined with Online Hard Negative Mining](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/OFB_with_OHNM.py) respectively. 
 
 You can find configuration file examples in the configs/OFB folder. 
 
