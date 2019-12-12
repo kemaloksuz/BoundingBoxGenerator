@@ -15,9 +15,9 @@ IDEA: Given a bounding box <img src="https://latex.codecogs.com/gif.latex?B" /> 
 
 ![BB demo image](demo/BBteaser.png)
 
-CODE: In the following line you can see an implementation of the extended version of the bounding box generator which outputs one box for each IoU in the given list of IoUs.
+CODE: In [this](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/bounding_box_generator.py#L180) you can see an implementation of the extended version of the bounding box generator which outputs one box for each IoU in the given list of IoUs.
 
-https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/bounding_box_generator.py#L180
+
 
 ## Positive RoI Generator
 
@@ -25,9 +25,8 @@ IDEA: We devised positive RoI (pROI) Generator as a specific application of the 
 
 ![pRoI demo image](demo/pRoIteaser.png)
 
-CODE: Following link is the address of the code of our pRoI generator. 
+CODE: [This](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/pRoI_generator.py) is the address of the code of our pRoI generator. 
 
-https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/pRoI_generator.py 
 
 One can employ it easily by sticking to the sampler conventions in the mmdetection framework. You can find configuration file examples in the configs/BBGeneration folder. 
 
@@ -37,11 +36,7 @@ Experimentally we have showed that our pRoI sampler is able to provide more samp
 
 IDEA: Different from the generators, Online Foreground Sampling is a sampler such as Random Sampler, OHEM Sampler etc. One difference from them is that we only consider positive examples in the batch, so it can also be combined to negative samplers. Main motivation is to generate a batch as balanced as possible from the classes within the batch. That's why we assign probabilities to each positive candidate RoI by considering the total number of each class. Basically, we utilize multinomial sampling.
 
-CODE: Following links are the addresses of the code of our plain OFB sampler and OFB sampler combined with Online Hard Negative Mining respectively. 
-
-https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py
-
-https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/OFB_with_OHNM.py
+CODE:One can check the our plain [OFB sampler](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/foreground_balanced_pos_sampler.py) and [OFB sampler](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/OFB_with_OHNM.py) combined with Online Hard Negative Mining respectively. 
 
 You can find configuration file examples in the configs/OFB folder. 
 
