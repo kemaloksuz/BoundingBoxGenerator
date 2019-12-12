@@ -5,7 +5,7 @@ This repository contains Pytorch implementations of the Bounding Box Generator, 
 
 Please cite the following paper if you use this repository. 
 
-Kemal Oksuz, Baris Can Cam, Emre Akbas, Sinan Kalkan, "Generating Positive Bounding Boxes for Balanced Training of Object Detectors," In: IEEE Winter Conference on Applications of Computer Vision (WACV) (2020). 
+Kemal Oksuz, Baris Can Cam, Emre Akbas, Sinan Kalkan, "Generating Positive Bounding Boxes for Balanced Training of Object Detectors," In: IEEE Winter Conference on Applications of Computer Vision (WACV) (2020). [arXiv-preprint](https://arxiv.org/abs/1909.09777)
 
 Here, we present the implementations of 3 modules in this repository:
 
