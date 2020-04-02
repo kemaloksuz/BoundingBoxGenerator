@@ -15,13 +15,28 @@ class pRoIGenerator(RandomSampler):
                  neg_pos_ub=-1,
                  add_gt_as_proposals=True,
                  IoUWeights=[0.73,0.12,0.15,0.05,0],
+                 IoUBases=[0.5,0.6,0.7,0.8,0.9],
+                 IoU_limit_precision=1e-5,
                  **kwargs):
+        '''
+        INPUTS:
+        num        : Total number of all RoIs (bg+fg) used during training
+        pos_fraction: ratio of the positive examples in the training batch
+        RoI_number : Number of RoIs/boxes to generate
+        IoU_bases  : N dimensional tensor storing the lower bounds for the bins.
+                     Ex.[0.5, 0.6, 0.7, 0.8, 0.9] then there are 5 bins from [0.5,0.6] to [0.9, 1.0]
+        IoU_weights: N dimensional tensor storing the weights of the bins. 
+        IoU_limit_precision: While drawing the limits for an IoU (e.g. see Fig.2 red curves),  
+                             it show the precision of the points. This is the part that makes the 
+                             algorithm a bit slower and needs an improvement.            
+        '''
         super(pRoIGenerator, self).__init__(num, pos_fraction, neg_pos_ub,
                                             add_gt_as_proposals)
 
+        self.IoUBases=torch.tensor(IoUBases, dtype=torch.float)
         self.IoUWeights=torch.tensor(IoUWeights, dtype=torch.float)
         self.pos_number=int(self.num * self.pos_fraction)
-        self.sampler=BoxSampler(self.pos_number)
+        self.sampler=BoxSampler(self.pos_number, self.IoUBases, self.IoUWeights, IoU_limit_precision)
         
     def sample(self,
                assign_result,
@@ -54,7 +69,7 @@ class pRoIGenerator(RandomSampler):
 
         generated_boxes, generated_box_labels, overlaps,gt_inds=self.sampler.sample(\
                         torch.cat((gt_bboxes,gt_labels.unsqueeze(1).type(torch.cuda.FloatTensor)),dim=1),\
-                        img_size,self.IoUWeights)
+                        img_size)
 
         if len(generated_boxes)>self.pos_number:
             idx=self.random_choice(torch.tensor(range(len(generated_boxes))).type(torch.cuda.LongTensor) ,self.pos_number)
