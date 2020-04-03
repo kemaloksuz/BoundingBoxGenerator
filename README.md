@@ -15,7 +15,7 @@ IDEA: Given a bounding box <img src="https://latex.codecogs.com/gif.latex?B" /> 
 
 ![BB demo image](demo/BBteaser.png)
 
-CODE: In this [link](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/bounding_box_generator.py#L180) you can see an implementation of the extended version of the bounding box generator which outputs one box for each IoU in the given list of IoUs.
+CODE: In this [link](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/5ee77b0f73b31bad711f0eee73cc2b0d5a35f1cc/mmdet/core/bbox/samplers/bounding_box_generator.py#L180) you can see an implementation of the extended version of the bounding box generator which outputs one box for each IoU in the given list of IoUs. Also, you can see a basic demo of the bounding box generator in this [script](https://github.com/kemaloksuz/BoundingBoxGenerator/blob/master/demo/bounding_box_generator_demo.py).
 
 
 
