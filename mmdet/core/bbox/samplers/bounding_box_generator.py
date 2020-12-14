@@ -130,8 +130,9 @@ class BoxSampler(object):
                                                                                               IoUSet[indexPointer:indexPointer+perInputAllocation[i]],\
                                                                                               perInputAllocation[i]) 
 
-            #Given the generated boxes from a GT, now we map the generated boxes to the image by reshifting and rescaling.
+            #Given the generated boxes from a GT (also GT), now we map the generated boxes to the image by reshifting and rescaling.
             sampledBoxSet[indexPointer:indexPointer+perInputAllocation[i],:]=self.unnormalize(sampledBoxSet[indexPointer:indexPointer+perInputAllocation[i],:], scales[i], shifts[i])
+            inputBoxSetExtended[indexPointer:indexPointer+perInputAllocation[i],:4] = self.unnormalize(inputBoxSetExtended[indexPointer:indexPointer+perInputAllocation[i],:4], scales[i], shifts[i])
 
             #In mmdetection, the association between the boxes are tracked, hence we store the mapping.
             gt_inds[indexPointer:indexPointer+perInputAllocation[i]]=i+1    
