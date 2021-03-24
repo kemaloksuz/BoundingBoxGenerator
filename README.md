@@ -46,7 +46,7 @@ If you use any of these properties in your research, please cite our paper.
 
 ```
 @inProceedings{BBGenerator,
-  title   = {Generating Positive Bounding Boxes for Balanced Training of Object Detectors,
+  title   = {Generating Positive Bounding Boxes for Balanced Training of Object Detectors},
   author  = {Oksuz, Kemal and Cam, Baris Can and Akbas, Emre and Kalkan, Sinan},
   booktitle={IEEE Winter Conference on Applications of Computer Vision (WACV)},
   year      = {2020}
